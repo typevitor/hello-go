@@ -1,6 +1,6 @@
 FROM node:18
 
-# RUN groupmod -g 1001 node && usermod -u 1001 -g 1001 node
+RUN groupmod -g 1001 node && usermod -u 1001 -g 1001 node
 
 RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
 

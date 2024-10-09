@@ -2,10 +2,28 @@ version: '3'
 
 services:
   app:
-    container_name: node-app
+    container_name: fc2-node-app
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - '.:/home/node/app'
     image: typevitor/nodeapp
+    networks:
+      - node-net
+
+  web:
+    container_name: fc2-nginx
+    ports:
+    - "8080:80"
+    image: nginx:alpine3.20-slim
+    volumes:
+      - '.docker/nginx:/etc/nginx/conf.d/'
+    depends_on:
+      - app
+    networks:
+      - node-net
+
+networks:
+  node-net: 
+      driver: bridge

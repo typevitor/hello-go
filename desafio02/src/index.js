@@ -19,7 +19,7 @@ app.get('/', async (req, res) => {
   const select = 'SELECT id, name FROM `people`';
   const [rows, fields] = await connection.query(select);
   const peopleList = rows.reduce((acc, person) => acc + `<li>${person.id} - ${person.name}</li>`, '');
-  res.send(`<h1>Full Cycle Rocks!!</h1><div><h4></h4><ul>${peopleList}</ul></div>`);
+  res.send(`<h1>Full Cycle Rocks!!!</h1><div><h4></h4><ul>${peopleList}</ul></div>`);
   connection.end();
 });
 

@@ -9,8 +9,12 @@ services:
     volumes:
       - '.:/home/node/app'
     image: typevitor/nodeapp
+    depends_on:
+      db:
+        condition: service_healthy    
     networks:
       - node-net
+      - node-back
 
   web:
     container_name: fc2-nginx
@@ -24,6 +28,31 @@ services:
     networks:
       - node-net
 
+  db:
+    container_name: fc2-db
+    image: mysql:8.0.39
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fc2-db
+      MYSQL_USER: fc2-user
+      MYSQL_PASSWORD: password
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-uroot", "-ppass"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    volumes:
+      - "./.docker/mysql/schema.sql:/docker-entrypoint-initdb.d/1.sql"
+      - app-db:/var/lib/mysql
+    networks:
+      - node-back
+
+volumes:
+  app-db:
+
 networks:
   node-net: 
-      driver: bridge
+    driver: bridge
+  node-back: 
+    driver: bridge

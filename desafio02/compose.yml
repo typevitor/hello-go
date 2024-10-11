@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - '.:/home/node/app'
+      - '/home/node/app/node_modules'
     image: typevitor/nodeapp
     depends_on:
       db:

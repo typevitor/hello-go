@@ -8,3 +8,6 @@
 ### Para executar o container Docker:
     cd desafio2
     docker compose up -d
+
+## Desafio 03: Commits Assinados
+- Foi gerada uma chave GPG e configurado o git para enviar commits assinados.

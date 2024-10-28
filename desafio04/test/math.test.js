@@ -1,13 +1,13 @@
-const Math = require('../src/math');
+const Operation = require('../src/math');
 
 describe('Math', () => {
-  let mathObj;
+  let mathOperation;
 
   beforeEach(() => {
-    mathObj = new Math();
+    mathOperation = new Operation();
   });
 
   test('adds 1 + 2 to equal 3', () => {
-    expect(mathObj.sum(1, 2)).toBe(3);
+    expect(mathOperation.sum(1, 2)).toBe(3);
   });  
 });

@@ -15,6 +15,7 @@ beforeEach(() => {
   MathOperation.mockClear();
 });
 
+require('../src/index.js')
 
 describe('index.js', () => {
   it('should call sum function of MathOperation with correct arguments', () => {

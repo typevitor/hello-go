@@ -14,6 +14,18 @@ class Math {
   div(a, b) {
     return a / b;
   }
+
+  mod(a, b) {
+    return a % b;
+  }
+
+  inc(a) {
+    return ++a;
+  }
+  
+  dec(a) {
+    return --a;
+  }
 }
 
 module.exports = Math;

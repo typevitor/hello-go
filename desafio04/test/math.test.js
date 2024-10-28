@@ -30,4 +30,8 @@ describe('Math', () => {
   test('inc 2 equal 3', () => {
     expect(mathOperation.inc(2)).toBe(3);
   });
+
+  test('dec 2 equal 1', () => {
+    expect(mathOperation.dec(2)).toBe(1);
+  });
 });

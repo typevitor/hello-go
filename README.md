@@ -11,3 +11,6 @@
 
 ## Desafio 03: Commits Assinados
 - Foi gerada uma chave GPG e configurado o git para enviar commits assinados.
+
+## Desafio 04: CI com Sonarcloud
+- Criação e workflow com validação de qualidade de Código na Sonarcloud.

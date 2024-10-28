@@ -1,4 +1,4 @@
-const MathOperation = require('./math');
+const MathOperation = require('./math/math');
 
 const mathObj = new MathOperation();
 

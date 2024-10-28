@@ -1,4 +1,4 @@
-const Operation = require('../src/math');
+const Operation = require('../src/math/math');
 
 describe('Math', () => {
   let mathOperation;
